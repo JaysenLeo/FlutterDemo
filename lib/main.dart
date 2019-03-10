@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'draw/draw_demo.dart';
-import './bottom_nav_bar/bottom_nav_bar.dart';
 
 void main() => runApp(App());
 
@@ -70,13 +69,8 @@ class Home extends StatelessWidget {
         /* *
          * drawer // 右边划出抽屉
          * endDrawer: , // 左边划出抽屉
-         * 
          * */
         drawer: UserDraw(),
-        /* 
-        底部导航栏 
-        */
-        bottomNavigationBar: BottomNavBar()
       ),
     );
   }
