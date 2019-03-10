@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
 
-class LayOut extends StatelessWidget {
+
+class BookIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Column(
       children: <Widget>[
-        IconEmblem(Icons.pool, limitSize: 60.0,)
+        CustomIcon(Icons.book, limitSize: 60.0, baseColor: Colors.black12)
       ],
     );
   }
 }
 
-class IconEmblem extends StatelessWidget {
+
+class CustomIcon extends StatelessWidget {
   final IconData icon;
   final double limitSize;
+  final Color baseColor;
 
-  IconEmblem(this.icon ,{
-    this.limitSize = 30
+  CustomIcon(this.icon ,{
+    this.limitSize = 100,
+    this.baseColor = Colors.blueAccent,
   });
 
   @override
@@ -25,9 +29,9 @@ class IconEmblem extends StatelessWidget {
     // TODO: implement build
     return Container(
       child: Icon(icon, size: limitSize, color: Colors.white,),
-      width: limitSize + 50,
-      height: limitSize + 50,
-      color: Color.fromRGBO(5, 60, 255, 0.6),
+      width: limitSize + 30,
+      height: limitSize + 30,
+      color: baseColor,
     );
   }
 }
