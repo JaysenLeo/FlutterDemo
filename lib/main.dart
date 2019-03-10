@@ -1,73 +1,59 @@
 import 'package:flutter/material.dart';
-import './bottom_nav_bar/bottom_nav_bar.dart';
 
+void main() => runApp(MyApp());
 
-void main() => runApp(App());
+// 继承静态组件
+class MyApp extends StatelessWidget {
 
-class App extends StatelessWidget {
+  //重写 build 方法 返回Widget组件
+  //传一个build 上下文
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
+  Widget build(BuildContext context){
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Home(),
-      theme: ThemeData(
-          primarySwatch: Colors.blue, // 应用主题颜色
-          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),// 点击后背景高亮的颜色
-          splashColor: Colors.white54 // 水波纹yanse
-      ),
-    );
-  }
-}
-
-class Home extends StatelessWidget {
-
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        // backgroundColor: Colors.orangeAccent,
-          appBar: AppBar(
-            /* *
-          去掉 leading 莫认将leading 绑定 Draw 的开关
-         */
-            // leading: IconButton( // 标题左边区域
-            //   icon: Icon(Icons.menu),
-            //   tooltip: '导航',
-            //   onPressed: () => debugPrint('导航事件')
-            // ),
-            actions: <Widget>[   // 标题右边区域 此处可以设置一组按钮
-              IconButton(
-                icon: Icon(Icons.search),
-                tooltip: '搜索',
-                onPressed: () => debugPrint('搜索事件'),
+      title: 'Hello TextWidget',
+      // home 给个脚手架组件
+      home:  Scaffold(
+        appBar: AppBar(
+          title: Text('Hello AppBar Title'),
+        ),
+        body: Center(
+          child: Container(
+            child: new Text(
+              'new 出来的 Text',
+              style: TextStyle(
+                  fontSize: 25.0
               ),
-            ],
-            title: Text('AppBarTitle'),
-            elevation: 5.0, // 阴影部分
-            bottom: TabBar(
-              unselectedLabelColor: Colors.white70,// 定义未被选择的 Tab 的样式的颜色
-              indicatorColor: Colors.black38,      // 定义选中的Tab标签下划线颜色
-              indicatorWeight: 3.0, // 定义选中的Tab标签下划线粗细
-              indicatorSize: TabBarIndicatorSize.label, // 定义选中的Tab标签下划线宽度 此处与标签icon宽度与之
-              tabs: <Widget>[
-                Tab(icon: Icon(Icons.shop)),
-                Tab(icon: Icon(Icons.book)),
-                Tab(icon: Icon(Icons.music_video))
-              ],
             ),
+
+            /*  alignment
+            *     Alignment.bottomCenter 底部居中对齐 等价于 Alignment(0.0, 1.0)
+            *     Alignment.bottomRight 底部右对齐 等价于 Alignment(1.0, 1.0)
+            *     Alignment.bottomLeft 底部左对齐 等价于 Alignment(-1.0, 1.0)
+            *     Alignment.centerRight 居中右对齐 等价于 Alignment(1.0, 0.0)
+            *     Alignment.center 居中对齐 等价于 Alignment(0.0, 0.0)
+            *     Alignment.centerLeft 居中左对齐 等价于 Alignment(-1.0, 0.0)
+            *     ...
+            * */
+            alignment: Alignment.topCenter, // 等价于 Alignment(0.0, -1.0)
+            width: 500.0,
+            height: 400.0,
+            // 线性渐变属性
+            decoration: BoxDecoration(
+                gradient: const LinearGradient(colors: [
+                  Colors.lightBlue,
+                  Colors.greenAccent,
+                  Colors.amberAccent
+                ])
+            ),
+            /*
+            * 上下左右内边距有都相同EdgeInsets.all(20.0)
+            * */
+            padding: const EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 20.0),
+            margin: const EdgeInsets.all(10.0),
           ),
-          body: TabBarView(
-            children: <Widget>[
-              Icon(Icons.shop, size: 130.0, color: Colors.black12,),
-              Icon(Icons.book, size: 130.0, color: Colors.black12,),
-              Icon(Icons.music_video, size: 130.0, color: Colors.black12,),
-            ],
-          ),
+        ),
       ),
     );
   }
+
 }
