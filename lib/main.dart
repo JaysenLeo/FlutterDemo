@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'draw/draw_demo.dart';
 import './bottom_nav_bar/bottom_nav_bar.dart';
+import 'mall/mall-listview.dart';
+import 'layout/layout.dart';
 
 void main() => runApp(App());
 
@@ -62,8 +64,8 @@ class Home extends StatelessWidget {
       ),
         body: TabBarView( 
           children: <Widget>[
-            Icon(Icons.shop, size: 130.0, color: Colors.black12,),
-            Icon(Icons.book, size: 130.0, color: Colors.black12,),
+            MallListView(),
+            LayOut(),
             Icon(Icons.music_video, size: 130.0, color: Colors.black12,),
           ],
         ),
