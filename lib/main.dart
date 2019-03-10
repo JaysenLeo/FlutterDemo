@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'draw/draw_demo.dart';
-import './bottom_nav_bar/bottom_nav_bar.dart';
 
-void main() => runApp(App());
+void main() => runApp(MyApp());
 
-class App extends StatelessWidget {
+// 继承静态组件
+class MyApp extends StatelessWidget {
+
+  //重写 build 方法 返回Widget组件
+  //传一个build 上下文
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
+  Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Home(),
@@ -80,4 +81,5 @@ class Home extends StatelessWidget {
       ),
     );
   }
+
 }
