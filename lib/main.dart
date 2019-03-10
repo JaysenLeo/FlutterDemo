@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'draw/draw_demo.dart';
+import 'bottom_nav_bar/bottom_nav_bar.dart';
 
 void main() => runApp(MyApp());
 
