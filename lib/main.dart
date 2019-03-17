@@ -28,18 +28,6 @@ class Home extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-      // backgroundColor: Colors.orangeAccent,
-        appBar: AppBar(
-        actions: <Widget>[   // 标题右边区域 此处可以设置一组按钮
-          IconButton(
-            icon: Icon(Icons.search),
-            tooltip: '搜索',
-            onPressed: () => debugPrint('搜索事件'),
-          ),
-        ],
-        title: Text('AppBarTitle'),
-        elevation: 5.0, // 阴影部分
-      ),
         body: MallListView()
       ),
     );
