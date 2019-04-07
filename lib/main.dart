@@ -39,6 +39,7 @@ class Home extends StatelessWidget {
              onPressed: () => debugPrint('其他事件'),
            )
         ],
+        centerTitle: true, //标题居中
         title: Text('AppBarTitle'),
         elevation: 5.0, // 阴影部分
       ),
